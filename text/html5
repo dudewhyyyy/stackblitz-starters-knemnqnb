@@ -16,7 +16,8 @@
   <!--ulike seksjoner-->
   <section>
     <!--hero-seksjoner-->
-    <h1>velkomen til mine sider</h1>
+    <h1>velkomen til min side</h1>
+    <h2>dette er min første side</h2>
   </section>
 </main>
 <footer>
@@ -24,4 +25,3 @@
 </footer>
 </body>
 </html>
-
