@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+ <title>hjem</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="with=device-width">
+<link rel="stylesheet" href="styles.css" />
+<script type="module" src="script.js"></script>
+</head>
+
+<body>
+ <header>
+    <!--navigasjonsbar, logo, søk-funksjon, innlogging-->
+ </header>
+ <main>
+  <!--ulike seksjoner-->
+  <section>
+    <!--hero-seksjoner-->
+    <h1>velkomen til mine sider</h1>
+  </section>
+</main>
+<footer>
+ <!--kreditsasjon, sosiale medier, kontaktinformasjonn-->
+</footer>
+</body>
+</html>
+
