@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>oppgave 1</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <h1>oppgave 1</h1>
+    <p>movies</p>
+    <ol id="movies"></ol>
+    <script type="text/javascript">
+        const items =[
+            {type: "movie", title: "princess mononoke", director: "hayao miyazaki", year: 2001},
+            {type: "movie", title: "indiana jones and the temple of doom", director: "steven spielberg", year: 1984}, 
+            {type: "movie", title: "gintama the final movie", director: "chizuru miyawaki", year: 2021}, 
+            {type: "movie", title: "howard the duck", director: "willard huyck", year: 1986}    
+        ];   
+
+        const itemsList = document.getElementById("movies");
+        items.forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = `${item.title} - ${item.director} - ${item.year}`;
+            itemsList.appendChild(li);
+        });
+
+        items.forEach(item => console.log(`${item.title} by ${item.director} (${item.year})`));
+    </script>
+</body>
+</html>
