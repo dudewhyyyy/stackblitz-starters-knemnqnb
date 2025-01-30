@@ -1,52 +1,105 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-    <title>slug</title>
-    <link ref="stylesheet" type="text/css" href="styles.css">
-    <link href="https://fonts.google.com/specimen/Playwrite+IN" rel="stylesheet">
+    <title>Example with Margins</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         body {
-         font-family: Arial, sans-serif;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         height: 100vh;
-         margin: 0;
-         background-color: #f0f0f0;
-     }
-     
-     .logo {
-         display: flex;
-         align-items: center;
-         padding: 10px 20px;
-         border-radius: 5px;
-         box-shadow:  0 4px 8px rgba(0, 0, 0, 0.1);
-         border: 6px solid #00ff2a; /* Added outline */
-         outline-style: solid;
-         outline-color: #00ff2a;
-         outline-width: thick;
-        
-     }
-     
-     .logo-icon {
-         font-size: 10em;
-         margin-right: 10px;
-     }
-     
-     .logo-text {
-         font-size: 3em;
-         color: green;
-         font-weight: bold;
-         font-family: 'Playwright IN', cursive; /* Applied Playwright IN font */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
-     </style>
+        nav.main-nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav.main-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        nav.main-nav a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f1f1f1;
+            flex-wrap: wrap; /* Allow wrapping of text boxes */
+        }
+        .box {
+            width: 50%;
+            height: 50%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Stack children vertically */
+        }
+        .text-box {
+            background-color: black;
+            border: 1px solid white;
+            margin: 20px; /* margin */
+            padding: 10px; /* padding */
+            color: white; /* text color */
+            border-radius: 5px; /* rounded corners */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .text-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px; /* Rounded corners for images */
+            margin-bottom: 10px; /* Space between image and text */
+        }
+    </style>
 </head>
-
 <body>
-    <div class="logo">
-        <div class="logo-icon"></div>
-        <div class="logo-text">slug</div>
-   </div>
-   <hi></hi>
+    <nav class="main-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <h1>bears</h1>
+    <p>i made a list of bears because there cool.</p>
+    <div class="container" id="container">
+        <!-- Text box will be appended here by JavaScript -->
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+
+        const box = document.createElement('div');
+        box.className = 'box';
+
+        const textBox = document.createElement('div');
+        textBox.className = 'text-box';
+
+        const img = document.createElement('img');
+        img.src = 'https://cdn.britannica.com/19/186719-050-887A6F2C/Grizzly-bear-Rocky-Mountains-Wyoming.jpg?w=300';// Provided image URL
+        img.alt = 'Grizzly Bear';
+
+        const text = document.createElement('p');
+        text.textContent = 'grizzly bear, (subspecies Ursus arctos horribilis), common name for one of the brown bears (Ursus arctos) belonging to the subspecies U. arctos horribilis. The grizzly bear is a massive animal with humped shoulders and an elevated forehead that contributes to a somewhat concave profile. The fur is brownish to buff, and the hairs are usually silver- or pale-tipped, giving the grizzled effect for which the bear is named. The term grizzly bear, however, is often applied informally to brown bears of North America regardless of subspecies';
+
+        textBox.appendChild(img);
+        textBox.appendChild(text);
+        box.appendChild(textBox);
+        container.appendChild(box);
+    </script>
 </body>
 </html>
