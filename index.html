@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Example with Margins</title>
+    <title>Example with Navigation Bar and Sidebar</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -17,6 +17,11 @@
             padding: 10px;
             display: flex;
             justify-content: space-around;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
         nav.main-nav a {
             color: white;
@@ -27,9 +32,13 @@
             background-color: #575757;
             border-radius: 5px;
         }
+        .main-content {
+            margin-top: 70px; /* Adjust based on nav height */
+            padding: 20px;
+            width: 100%;
+        }
         .container {
             width: 100%;
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -37,8 +46,7 @@
             flex-wrap: wrap; /* Allow wrapping of text boxes */
         }
         .box {
-            width: 50%;
-            height: 50%;
+            width: 500%;
             background-color: #333;
             color: #fff;
             text-align: center;
@@ -46,11 +54,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column; /* Stack children vertically */
+            flex-direction: flat; /*stakk children verdicly*/
         }
         .text-box {
             background-color: black;
-            border: 1px solid white;
+            border: 5px solid white; /* Wider border */
             margin: 20px; /* margin */
             padding: 10px; /* padding */
             color: white; /* text color */
@@ -74,10 +82,12 @@
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
     </nav>
-    <h1>Example with Margins</h1>
-    <p>This example demonstrates how to create a text box with an image, background, border, and margins using HTML, CSS, and JavaScript.</p>
-    <div class="container" id="container">
-        <!-- Text box will be appended here by JavaScript -->
+    <div class="main-content">
+        <h1>Example with Margins</h1>
+        <p>This example demonstrates how to create a text box with an image, background, border, and margins using HTML, CSS, and JavaScript.</p>
+        <div class="container" id="container">
+            <!-- Text box will be appended here by JavaScript -->
+        </div>
     </div>
 
     <script>
@@ -90,11 +100,11 @@
         textBox.className = 'text-box';
 
         const img = document.createElement('img');
-        img.src = 'https://cdn.britannica.com/41/156441-050-A4424AEC/Grizzly-bear-Jasper-National-Park-Canada-Alberta.jpg'; // Provided image URL
+        img.src = 'https://cdn.britannica.com/41/156441-050-A4424AEC/Grizzly-bear-Jasper-National-Park-Canada-Alberta.jpg'; //provide image URL
         img.alt = 'Grizzly Bear';
 
         const text = document.createElement('p');
-        text.textContent = 'This is a text box with a background, border, and margins.';
+        text.textContent = `The grizzly bear (Ursus arctos horribilis), also known as the North American brown bear or simply grizzly, is a population or subspecies of the brown bear inhabiting North America.In addition to the mainland grizzly (Ursus arctos horribilis), other morphological forms of brown bear in North America are sometimes identified as grizzly bears. These include three living populations—the Kodiak bear (U. a. middendorffi), the Kamchatka bear (U. a. beringianus), and the peninsular grizzly (U. a. gyas)—as well as the extinct California grizzly (U. a. californicus†) and Mexican grizzly (formerly U. a. nelsoni†). On average, grizzly bears near the coast tend to be larger while inland grizzlies tend to be smaller.The Ussuri brown bear (U. a. lasiotus), inhabiting the Ussuri Krai, Sakhalin, the Amur Oblast, the Shantar Islands, Iturup Island, and Kunashir Island in Siberia, northeastern China, North Korea, and Hokkaidō in Japan, is sometimes referred to as the "black grizzly", although it is no more closely related to North American brown bears than other subspecies of the brown bear around the world`;
 
         textBox.appendChild(img);
         textBox.appendChild(text);
