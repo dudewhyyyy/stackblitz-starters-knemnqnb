@@ -12,3 +12,9 @@ main {
   width: 200px;
   background-color: blue;
 }
+
+@media (max-width: 426px) {
+ body {
+  background-color: red;
+ }
+}

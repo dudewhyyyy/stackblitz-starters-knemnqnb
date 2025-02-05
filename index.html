@@ -10,33 +10,34 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+        
         }
         nav.main-nav {
             background-color: #333;
             color: white;
             padding: 10px;
             display: flex;
+            flex-direction: column;
             justify-content: space-around;
             width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
+            position: sticky;
+
         }
         nav.main-nav a {
             color: white;
-            text-decoration: none;
             padding: 10px;
+        }
+        nav.main-nav div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
         }
         nav.main-nav a:hover {
             background-color: #575757;
             border-radius: 5px;
         }
-        .main-content {
-            margin-top: 70px; /* Adjust based on nav height */
-            padding: 20px;
-            width: 100%;
-        }
+
         .container {
             width: 100%;
             display: flex;
@@ -44,23 +45,28 @@
             align-items: center;
             background-color: #f1f1f1;
             flex-wrap: wrap; /* Allow wrapping of text boxes */
+            
+        }
+        .content {
+            padding: 10px;
         }
         .box {
-            width: 500%;
+            width: 50%;
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 20px;
+            padding: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: flat; /*stakk children verdicly*/
+            margin: 10px; /*add margin between boxes */
         }
         .text-box {
             background-color: black;
             border: 5px solid white; /* Wider border */
-            margin: 20px; /* margin */
-            padding: 10px; /* padding */
+            margin: 1px; /* margin */
+            padding:10px; /* padding */
             color: white; /* text color */
             border-radius: 5px; /* rounded corners */
             display: flex;
@@ -68,48 +74,129 @@
             align-items: center;
         }
         .text-box img {
-            max-width: 100%;
+            max-width: 90%;
             height: auto;
             border-radius: 5px; /* Rounded corners for images */
             margin-bottom: 10px; /* Space between image and text */
+        }   
+        .text-box p {
+            font-size: 25px; /* Change text size */
         }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .about, .gallery, .contact {
+            padding: 20px;
+            background-color: #f1f1f1;
+            margin: 20px;
+            border-radius: 5px;
+        }
+        .about h2, .gallery h2, .contact h2 {
+           margin-yop: 0;
+        }
+
     </style>
 </head>
 <body>
+   
     <nav class="main-nav">
+        <h1>welcome</h1>
+    <div>
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
+    </div>
     </nav>
-    <div class="main-content">
-        <h1>Example with Margins</h1>
-        <p>This example demonstrates how to create a text box with an image, background, border, and margins using HTML, CSS, and JavaScript.</p>
+    <div class="main content">
+        <h2>this is a website about bears becouse bears are cool</h2>
+        <p>Bears are carnivoran mammals of the family Ursidae. They are classified as caniforms, or doglike carnivorans. Although only eight species of bears are extant, they are widespread, appearing in a wide variety of habitats throughout the Northern Hemisphere and partially in the Southern Hemisphere.</p>
         <div class="container" id="container">
             <!-- Text box will be appended here by JavaScript -->
         </div>
     </div>
 
+    <section id="about" class="about">
+        <h2>About bears</h2>
+        <p>This is a website about bears because bears are cool. This example demonstrates how to create a text box about a bear with an image of a bear, gray background, white border, and gray margins using HTML, CSS, and JavaScript.</p>
+        </div>
+
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>For more information about bears, please contact us.</p>
+        <form>
+            <label for="name">jonas:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">jonas.joys03@gmail.com :</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
     <script>
-        const container = document.getElementById('container');
+         const container = document.getElementById('container');
 
-        const box = document.createElement('div');
-        box.className = 'box';
+        const bears = [
+            {
+                imgSrc: 'https://cdn.britannica.com/41/156441-050-A4424AEC/Grizzly-bear-Jasper-National-Park-Canada-Alberta.jpg',
+                imgAlt: 'Grizzly Bear',
+                text: 'The grizzly bear (Ursus arctos horribilis), also known as the North American brown bear or simply grizzly, is a population or subspecies of the brown bear inhabiting North America.'
+            },
+            {
+                imgSrc: 'https://i.natgeofe.com/k/55256f3f-2cf1-4b93-9d95-a13b0faa30a6/Mom-and-Babies_Polar-Bear_KIDS_0223-crop_4x3.jpg',
+                imgAlt: 'Polar Bear',
+                text: 'The polar bear (Ursus maritimus) is a hypercarnivorous bear whose native range lies largely within the Arctic Circle, encompassing the Arctic Ocean, its surrounding seas and surrounding land masses.'
+            },
+            {
+                imgSrc: 'hhttps://bearwithus.org/wp-content/uploads/2014/11/momma2of4cubsJune29-20142mgD806604-1024x683.jpg',
+                imgAlt: 'Black Bear',
+                text: 'The American black bear (Ursus americanus) is a medium-sized bear native to North America. It is the continent\'s smallest and most widely distributed bear species.'
+            },
+            {
+                imgSrc: 'https://animals.sandiegozoo.org/sites/default/files/2016-09/T11_0235_033_3.jpg',
+                imgAlt: 'Panda Bear',
+                text: 'The giant panda (Ailuropoda melanoleuca), also known as the panda bear or simply the panda, is a bear species endemic to China. It is characterized by its bold black-and-white coat and rotund body.'
+            }
+        ];
 
-        const textBox = document.createElement('div');
-        textBox.className = 'text-box';
+        bears.forEach(bear => {
+            const box = document.createElement('div');
+            box.className = 'box';
 
-        const img = document.createElement('img');
-        img.src = 'https://cdn.britannica.com/41/156441-050-A4424AEC/Grizzly-bear-Jasper-National-Park-Canada-Alberta.jpg'; //provide image URL
-        img.alt = 'Grizzly Bear';
+            const textBox = document.createElement('div');
+            textBox.className = 'text-box';
 
-        const text = document.createElement('p');
-        text.textContent = `The grizzly bear (Ursus arctos horribilis), also known as the North American brown bear or simply grizzly, is a population or subspecies of the brown bear inhabiting North America.In addition to the mainland grizzly (Ursus arctos horribilis), other morphological forms of brown bear in North America are sometimes identified as grizzly bears. These include three living populations—the Kodiak bear (U. a. middendorffi), the Kamchatka bear (U. a. beringianus), and the peninsular grizzly (U. a. gyas)—as well as the extinct California grizzly (U. a. californicus†) and Mexican grizzly (formerly U. a. nelsoni†). On average, grizzly bears near the coast tend to be larger while inland grizzlies tend to be smaller.The Ussuri brown bear (U. a. lasiotus), inhabiting the Ussuri Krai, Sakhalin, the Amur Oblast, the Shantar Islands, Iturup Island, and Kunashir Island in Siberia, northeastern China, North Korea, and Hokkaidō in Japan, is sometimes referred to as the "black grizzly", although it is no more closely related to North American brown bears than other subspecies of the brown bear around the world`;
+            const img = document.createElement('img');
+            img.src = bear.imgSrc;
+            img.alt = bear.imgAlt;
 
-        textBox.appendChild(img);
-        textBox.appendChild(text);
-        box.appendChild(textBox);
-        container.appendChild(box);
+            const text = document.createElement('p');
+            text.textContent = bear.text;
+
+            textBox.appendChild(img);
+            textBox.appendChild(text);
+            box.appendChild(textBox);
+            container.appendChild(box);
+        });
+
+        const galleryContainer = document.getElementById('gallery-container');
+
+bears.forEach(bear => {
+    const img = document.createElement('img');
+    img.src = bear.imgSrc;
+    img.alt = bear.imgAlt;
+    img.style.maxWidth = '45%';
+    img.style.margin = '10px';
+    galleryContainer.appendChild(img);
+});
     </script>
 </body>
 </html>
