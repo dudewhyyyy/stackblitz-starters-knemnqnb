@@ -6,11 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
+        *{
+            box-sizing: border-box;
+        }
+      
+        /*style the body*/
         body {
-            margin: 0;
-            padding: 0;
+           margin: 0;
             font-family: Arial, sans-serif;
         
+        }
+          /*header/logo title */
+          header {
+        padding: 60px;
+        text-align: left;
+        background: #232b29;
+        color: #141313;
+        font-size: 30px;
+         
+        }
+        header h1{
+         font-size: 40px;
+         
         }
         nav.main-nav {
             background-color: #333;
@@ -21,10 +38,10 @@
             justify-content: space-around;
             width: 100%;
             position: sticky;
-
+            top:0; /* fixed at the top*/
         }
         nav.main-nav a {
-            color: white;
+            color: rgb(252, 250, 250);
             padding: 10px;
         }
         nav.main-nav div {
@@ -36,6 +53,12 @@
         nav.main-nav a:hover {
             background-color: #575757;
             border-radius: 5px;
+        }
+        .main-content {
+            margin-top: 80; /* adjust the margin to make space for the navigation bar */
+            padding: 20px;
+            width: 100%;
+            padding-bottom: 60px; /* Add padding to the bottom to make space for the footer */
         }
 
         .container {
@@ -82,14 +105,14 @@
         .text-box p {
             font-size: 25px; /* Change text size */
         }
+        /*footer*/
         footer {
             background-color: #333;
             color: white;
             text-align: center;
             padding: 10px;
-            position: fixed;
-            bottom: 0;
             width: 100%;
+            margin-top: 20px; 
         }
         .about, .gallery, .contact {
             padding: 20px;
@@ -98,13 +121,16 @@
             border-radius: 5px;
         }
         .about h2, .gallery h2, .contact h2 {
-           margin-yop: 0;
+           margin-top: 0;
         }
 
     </style>
 </head>
 <body>
-   
+  </div class="header">
+  <h1>bears</h1>
+  <p>something about bears</p>
+  <div>
     <nav class="main-nav">
         <h1>welcome</h1>
     <div>
@@ -112,6 +138,7 @@
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
+        <a href="https://github.com/dudewhyyyy" target="_blank">GitHub</a>
     </div>
     </nav>
     <div class="main content">
@@ -120,27 +147,34 @@
         <div class="container" id="container">
             <!-- Text box will be appended here by JavaScript -->
         </div>
-    </div>
-
-    <section id="about" class="about">
-        <h2>About bears</h2>
-        <p>This is a website about bears because bears are cool. This example demonstrates how to create a text box about a bear with an image of a bear, gray background, white border, and gray margins using HTML, CSS, and JavaScript.</p>
-        </div>
-
     <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p>For more information about bears, please contact us.</p>
+        <h2>Contact Us</h2>
+        <p>If you have any questions or comments about bears, feel free to reach out to us!</p>
+        <p>Contact Information:</p>
+        <ul>
+            <li>Name: Jonas</li>
+            <li>Email: jonas.joys03@gmail.com</li>
+            <li>Phone: 94825352</li>
+        </ul>
         <form>
-            <label for="name">jonas:</label>
+            <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
-            <label for="email">jonas.joys03@gmail.com :</label>
-            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="last name">last name:</label>
+            <input type="last name" id="last name" name="last name" required>
             <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
+            <br>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <br>
             <button type="submit">Submit</button>
         </form>
     </section>
-
+    
+</section>
+<footer>
+<h2>bears</h2>
+</footer>
+</div>
     <script>
          const container = document.getElementById('container');
 

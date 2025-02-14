@@ -1,27 +1,35 @@
-<!DOCTYPE html>
-<html lang="nb">
+<!doctype html>
+<html lang="en">
+</html>
 <head>
- <title>hjem</title>
- <meta charset="utf-8">
- <meta name="viewport" content="with=device-width">
-<link rel="stylesheet" href="styles.css" />
-<script type="module" src="script.js"></script>
+
 </head>
 
 <body>
- <header>
-    <!--navigasjonsbar, logo, søk-funksjon, innlogging-->
- </header>
- <main>
-  <!--ulike seksjoner-->
-  <section>
-    <!--hero-seksjoner-->
-    <h1>velkomen til min side</h1>
-    <h2>dette er min første side</h2>
-  </section>
-</main>
-<footer>
- <!--kreditsasjon, sosiale medier, kontaktinformasjonn-->
-</footer>
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or comments about bears, feel free to reach out to us!</p>
+    <p>Contact Information:</p>
+    <ul>
+        <li>Name: Jonas</li>
+        <li>Email: jonas.joys03@gmail.com</li>
+        <li>Phone: 94825352</li>
+    </ul>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
 </body>
-</html>
