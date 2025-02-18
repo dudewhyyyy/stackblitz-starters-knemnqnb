@@ -4,145 +4,71 @@
     <title>Example with Navigation Bar and Sidebar</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        
-        }
-        nav.main-nav {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 100%;
-            position: sticky;
-
-        }
-        nav.main-nav a {
-            color: white;
-            padding: 10px;
-        }
-        nav.main-nav div {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            width: 100%;
-        }
-        nav.main-nav a:hover {
-            background-color: #575757;
-            border-radius: 5px;
-        }
-
-        .container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f1f1f1;
-            flex-wrap: wrap; /* Allow wrapping of text boxes */
-            
-        }
-        .content {
-            padding: 10px;
-        }
-        .box {
-            width: 50%;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: flat; /*stakk children verdicly*/
-            margin: 10px; /*add margin between boxes */
-        }
-        .text-box {
-            background-color: black;
-            border: 5px solid white; /* Wider border */
-            margin: 1px; /* margin */
-            padding:10px; /* padding */
-            color: white; /* text color */
-            border-radius: 5px; /* rounded corners */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .text-box img {
-            max-width: 90%;
-            height: auto;
-            border-radius: 5px; /* Rounded corners for images */
-            margin-bottom: 10px; /* Space between image and text */
-        }   
-        .text-box p {
-            font-size: 25px; /* Change text size */
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .about, .gallery, .contact {
-            padding: 20px;
-            background-color: #f1f1f1;
-            margin: 20px;
-            border-radius: 5px;
-        }
-        .about h2, .gallery h2, .contact h2 {
-           margin-yop: 0;
-        }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-   
-    <nav class="main-nav">
-        <h1>welcome</h1>
-    <div>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </div>
-    </nav>
-    <div class="main content">
+    <header class="header">
+        <div> 
+            <h1>bears</h1>
+            <p>something about bears</p>
+        </div>
+        <div class="sticky">
+            <nav class="main-nav">
+                <h1>welcome</h1>
+                <div>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main content">
         <h2>this is a website about bears becouse bears are cool</h2>
         <p>Bears are carnivoran mammals of the family Ursidae. They are classified as caniforms, or doglike carnivorans. Although only eight species of bears are extant, they are widespread, appearing in a wide variety of habitats throughout the Northern Hemisphere and partially in the Southern Hemisphere.</p>
         <div class="container" id="container">
             <!-- Text box will be appended here by JavaScript -->
         </div>
-    </div>
-
-    <section id="about" class="about">
-        <h2>About bears</h2>
-        <p>This is a website about bears because bears are cool. This example demonstrates how to create a text box about a bear with an image of a bear, gray background, white border, and gray margins using HTML, CSS, and JavaScript.</p>
-        </div>
 
     <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p>For more information about bears, please contact us.</p>
+        <h2>Contact Us</h2>
+        <p>If you have any questions or comments about bears, feel free to reach out to us!</p>
+        <p>Contact Information:</p>
+        <ul>
+            <li>Name: Jonas</li>
+            <li>Email: jonas.joys03@gmail.com</li>
+            <li>Phone: 94825352</li>
+        </ul>
         <form>
-            <label for="name">jonas:</label>
+            <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
-            <label for="email">jonas.joys03@gmail.com :</label>
-            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="last name">last name:</label>
+            <input type="last name" id="last name" name="last name" required>
             <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
+            <br>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <br>
             <button type="submit">Submit</button>
         </form>
     </section>
+    
+</section>
 
+</main>
+    <footer>
+    <h2>bears</h2>
+    </footer>
     <script>
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            nav.classList.toggle('open');
          const container = document.getElementById('container');
+        }
+
+        const container = document.getElementById('container');
 
         const bears = [
             {
@@ -156,7 +82,7 @@
                 text: 'The polar bear (Ursus maritimus) is a hypercarnivorous bear whose native range lies largely within the Arctic Circle, encompassing the Arctic Ocean, its surrounding seas and surrounding land masses.'
             },
             {
-                imgSrc: 'hhttps://bearwithus.org/wp-content/uploads/2014/11/momma2of4cubsJune29-20142mgD806604-1024x683.jpg',
+                imgSrc: 'https://bearwithus.org/wp-content/uploads/2014/11/momma2of4cubsJune29-20142mgD806604-1024x683.jpg',
                 imgAlt: 'Black Bear',
                 text: 'The American black bear (Ursus americanus) is a medium-sized bear native to North America. It is the continent\'s smallest and most widely distributed bear species.'
             },

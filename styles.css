@@ -1,20 +1,118 @@
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+*{
+    box-sizing: border-box;
+}
+/*style the body*/
+body {
+   margin: 0%;
+    font-family: Arial, sans-serif;
+
+}
+/*header/logo title */
+header {
+padding: 60px;
+text-align: left;
+background: #232b29;
+color: #f1f1f1;
+font-size: 30px;
+ 
+}
+header h1{
+ font-size: 40px;
+}
+nav.main-nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    position: sticky;
+    top:0;
+   
+}
+nav.main-open{
+    left: 0; /*slide from the left*/
+}
+nav.main-nav a {
+    color: white;
+    padding: 10px;
+}
+nav.main-nav header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+nav.main-nav a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+.main-content {
+    margin-top: 80; /* adjust the margin to make space for the navigation bar */
+    padding: 20px;
+    width: 100%;
+    padding-bottom: 60px; /* Add padding to the bottom to make space for the footer */
 }
 
-#removeBtn {
-  width: 100px;
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    flex-wrap: wrap; /* Allow wrapping of text boxes */
+    
 }
-
-.color {
-  width: 200px;
-  background-color: blue;
+.content {
+    padding: 10px;
 }
-
-@media (max-width: 426px) {
- body {
-  background-color: red;
- }
+.box {
+    width: 50%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: flat; /*stakk children verdicly*/
+    margin: 10px; /*add margin between boxes */
+}
+.text-box {
+    background-color: black;
+    border: 5px solid white; /* Wider border */
+    margin: 1px; /* margin */
+    padding:10px; /* padding */
+    color: white; /* text color */
+    border-radius: 5px; /* rounded corners */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text-box img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 5px; /* Rounded corners for images */
+    margin-bottom: 10px; /* Space between image and text */
+}   
+.text-box p {
+    font-size: 25px; /* Change text size */
+}
+/*footer*/
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+.about, .gallery, .contact {
+    padding: 20px;
+    background-color: #f1f1f1;
+    margin: 20px;
+    border-radius: 5px;
+}
+.about h2, .gallery h2, .contact h2 {
+   margin-top: 0;
 }
